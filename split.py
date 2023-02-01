@@ -5,10 +5,10 @@ from math import ceil
 import os
 
 # premium account
-temp_channel = os.environ.get("TEMP_CHAT", "")
+temp_channel = os.environ.get("TEMP_CHAT", "-1001696495854")
 try: temp_channel = int(temp_channel)
 except: pass
-ss = os.environ.get("STRING", "")
+ss = os.environ.get("STRING", "BQC9EiEUYn6I9Lnd1KTOnGDXEKUaxik2U3reg5LiE9FbdXoa2AWHKtVKhnoB91uJvAbgGsOvetC8agr3Uc1uG1ESa-XTXQk34uJyE2rALrtPA5o-DJZHYfFJbmwUZs0C9xdBw0fIiZc2-YB5aE-BfsiJoNpFd3HZ8phwYAhh8PDWNdtPY0exl3XDWcBW50Smh7PVEQlwjeWPja3jqWLCNd7E64UBsAUXcCD8TTopvPzkPN_gQYR0QoDER9VMLcmb9QlIn81lgVNVMhIL2_8Owh39bHQmJ5cC5FUkDeXh7E82jD3IKtCOpmT0-dzFK5Z0r-yuapVOs_89m66-vTDDyUZdN11fzQA")
 if ss != "" and temp_channel != "": isPremmium = True
 else: isPremmium = False
 
