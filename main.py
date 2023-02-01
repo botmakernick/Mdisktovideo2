@@ -16,9 +16,9 @@ from split import TG_SPLIT_SIZE
 
 
 # app
-bot_token = os.environ.get("TOKEN", "") 
-api_hash = os.environ.get("HASH", "") 
-api_id = os.environ.get("ID", "")
+bot_token = os.environ.get("TOKEN", "5619979785:AAFVrLENL7LhRWoWp7PRO3SxJLbw-7eNWbI") 
+api_hash = os.environ.get("HASH", "028f44575fc5e5ca13bdeb0b7b3f603d") 
+api_id = os.environ.get("ID", "1738777")
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 # preiumum
@@ -35,11 +35,10 @@ from mdisk import iswin
 def echo(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
 
     if not checkuser(message):
-        app.send_message(message.chat.id, '__You are either not **Authorized** or **Banned**__', reply_to_message_id=message.id,reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("📦 Source Code", url="https://github.com/bipinkrish/Mdisk-Downloader-Bot")]]))
+        app.send_message(message.chat.id, '__**JAsuran Only Used this Bot**__',reply_to_message_id=message.id)
         return
 
-    app.send_message(message.chat.id, '**Hi, I am Mdisk Video Downloader, you can watch Videos without MX Player.\n__Send me a link to Start...__**',reply_to_message_id=message.id,
-    reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("📦 Source Code", url="https://github.com/bipinkrish/Mdisk-Downloader-Bot")]]))
+    app.send_message(message.chat.id, '**ꜱᴇɴᴅ __ᴍᴅɪꜱᴋ ʟɪɴᴋ__**\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ @JAsuranbots',reply_to_message_id=message.id,reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("Serial Channel", url="https://t.me/JAsuranserials")]]))
 
 # help command
 @app.on_message(filters.command(["help"]))
@@ -55,7 +54,7 @@ def help(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 **/thumb** - reply to a image document of size less than 200KB to set it as Thumbnail ( you can also send image as a photo to set it as Thumbnail automatically )
 **/remove** - remove Thumbnail
 **/show** - show Thumbnail
-**/change** - change upload mode ( default mode is Document )__"""
+**/mode** - change upload mode ( default mode is Video)__"""
     app.send_message(message.chat.id, helpmessage, reply_to_message_id=message.id)
 
 
@@ -95,7 +94,7 @@ def status(folder,message,fsize):
             size = str(int(open(f"tempS-{message.id}.txt","r").readlines()[-2].split()[2].replace(",","")) // 1000000) + "MB "
 
         try:
-            app.edit_message_text(message.chat.id, message.id, f"__Downloaded__ : **{size} **__of__**  {fsize:.1f}M**")
+            app.edit_message_text(message.chat.id, message.id, f"╭━〔ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴛᴀᴛꜱ 🤖〕\n┣⪼ 😩😩😩😩😩😩\n┣⪼ __ᴛᴏᴛᴀʟ ꜱɪᴢᴇ__ : **{fsize:.1f}M**\n┣⪼ __ᴄᴏᴍᴘʟᴇᴛᴇᴅ__ : **{size}**\n┣⪼ @JAsuranBots")
             time.sleep(10)
         except:
             time.sleep(5)
@@ -114,7 +113,7 @@ def upstatus(statusfile,message):
         with open(statusfile,"r") as upread:
             txt = upread.read()
         try:
-            app.edit_message_text(message.chat.id, message.id, f"__Uploaded__ : **{txt}**")
+            app.edit_message_text(message.chat.id, message.id, f"╭━〔ᴜᴘʟᴏᴀᴅ ꜱᴛᴀᴛꜱ 🤖〕\n┣⪼ 😄😄😄😄😄😄\n┣⪼ __ᴄᴏᴍᴘʟᴇᴛᴇᴅ__ : **{txt}**\n┣⪼ @JAsuranBots")
             time.sleep(10)
         except:
             time.sleep(5)
@@ -188,7 +187,7 @@ def down(message,link):
             i = i + 1
 
         # actuall upload
-        if info == "V":
+        if info == "D":
             thumb,duration,width,height = mediainfo.allinfo(ele,thumbfile)
             if not isPremmium : app.send_video(message.chat.id, video=ele, caption=f"{partt}**{filename}**", thumb=thumb, duration=duration, height=height, width=width, reply_to_message_id=message.id, progress=progress, progress_args=[message])
             else:
@@ -298,7 +297,7 @@ def ptumb(client: pyrogram.client.Client, message: pyrogram.types.messages_and_m
     
 
 # change mode
-@app.on_message(filters.command(["change"]))
+@app.on_message(filters.command(["mode"]))
 def change(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
     
     if not checkuser(message):
@@ -307,7 +306,7 @@ def change(client: pyrogram.client.Client, message: pyrogram.types.messages_and_
     
     info = extras.getdata(str(message.from_user.id))
     extras.swap(str(message.from_user.id))
-    if info == "V":
+    if info == "D":
         app.send_message(message.chat.id, '__Mode changed from **Video** format to **Document** format__',reply_to_message_id=message.id)
     else:
         app.send_message(message.chat.id, '__Mode changed from **Document** format to **Video** format__',reply_to_message_id=message.id)
