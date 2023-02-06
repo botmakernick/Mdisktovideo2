@@ -35,13 +35,7 @@
 ( you can also send image as a photo to set it as Thumbnail automatically )
 /remove - remove Thumbnail
 /show - show Thumbnail
-/change - change upload mode
-( default mode is Document )
+/mode - change upload mode
+( default mode is video )
 ```
 ---
-
-# Deploy
-
-*You can use the bot locally by either running* **main.py** or deploy using **Procfile** or **Dokerfile** or **docker-compose.yml**
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/D6ueVa?referralCode=_4oAwx)
