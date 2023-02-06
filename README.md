@@ -35,5 +35,5 @@
 /remove - remove Thumbnail
 /show - show Thumbnail
 /mode - change upload mode (default mode is video)
-```**
+```
 ---
