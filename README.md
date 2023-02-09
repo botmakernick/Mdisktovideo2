@@ -4,6 +4,14 @@
 
 ---
 
+# Note
+
+## Anyone Deploy in Render. Please Select Environment Type Python3 Not Docker...
+
+## Then Paste Start Command Text (Found in run cmd.txt file)
+
+
+
 # Variables
 
 #### Required
