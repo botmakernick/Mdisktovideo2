@@ -38,8 +38,8 @@ def echo(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
         app.send_message(message.chat.id, '__You are either not **Authorized** or **Banned**__', reply_to_message_id=message.id)
         return
 
-    app.send_message(message.chat.id, '**Hi, I am Mdisk Video Downloader, you can watch Videos without MX Player.\n__Send me a link to Start...__\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ @JAsuranbots**',reply_to_message_id=message.id,
-    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📦 Repo", url="https://github.com/JAsuranbots/JAsurans_Mdisk_Downloader")], [InlineKeyboardButton("Serial Channel", url="https://t.me/JAsuranserials")], [InlineKeyboardButton("Movie Search", url="https://t.me/Asuranmoviefinder")]]))
+    app.send_message(message.chat.id, '**Hi, I am Mdisk Video Downloader, you can watch Videos without MX Player.\n__Send me a mdisk link to convert...__\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ @nickallbots**',reply_to_message_id=message.id,
+    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤴 Owner 🤴", url="https://t.me/mdiskbot200")], [InlineKeyboardButton("🛸 Updates Channel 🛸", url="https://t.me/nickallbots")], [InlineKeyboardButton("🍿 Movie lover 🍿", url="https://t.me/allmoviesheretojoinhindi")]]))
 
 # help command
 @app.on_message(filters.command(["help"]))
